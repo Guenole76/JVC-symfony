@@ -22,10 +22,32 @@ class ArticlesController extends AbstractController
         // On appelle la liste de tous les articles
         $articles = $this->getDoctrine()->getRepository(Articles::class)->findAll();
 
-        dd($articles);
+        
 
         return $this->render('articles/index.html.twig', [
-            'controller_name' => 'ArticlesController',
+            'articles' => $articles
+        ]);
+    }
+
+   /**
+     * @Route("/article/a", name="articles")
+     */
+
+    public function article($slug){
+        $articles = $this->getDoctrine()->getRepository(Articles::class)->findOneby([
+            'slug' => $slug
+        ]);
+
+        if(!$articles){
+            throw $this->createNotfoundException("l'article recherché n'existe pas");
+        }
+
+        $commentaire = new Commentaire();
+
+        $form = $this->createForm(CommentaireFormType::class, $commentaire);
+        return $this->render('articles/articles.html.twig', [
+            'articles' => $articles,
+            'commentForm' => $form->createView()
         ]);
     }
 }

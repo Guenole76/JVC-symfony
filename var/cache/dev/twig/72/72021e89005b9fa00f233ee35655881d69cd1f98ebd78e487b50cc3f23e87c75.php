@@ -57,7 +57,7 @@ class __TwigTemplate_f2c8ba8b1bbb6def94952ff0e59c80f87513803cdd1a40121e6dc0022f3
 
   </head>
   <body>
-
+    
     <div class=\"bandeau\">
       <div class=\"jvc\">
 
@@ -190,6 +190,16 @@ class __TwigTemplate_f2c8ba8b1bbb6def94952ff0e59c80f87513803cdd1a40121e6dc0022f3
      <p>Article3<a href=\"https://www.w3schools.com\">Hearthstone</a></p>
     </div>
 
+    <p><a href=\"/actualites\">Liste des articles</a></p>
+
+    ";
+        // line 139
+        echo "  
+    <p><a href=\"";
+        // line 140
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("actualites_articles");
+        echo "\">Liste des articles</a></p>
+
     </div>\t
 
      
@@ -227,7 +237,7 @@ class __TwigTemplate_f2c8ba8b1bbb6def94952ff0e59c80f87513803cdd1a40121e6dc0022f3
 
     public function getDebugInfo()
     {
-        return array (  177 => 122,  170 => 118,  163 => 114,  156 => 110,  147 => 104,  43 => 2,);
+        return array (  200 => 140,  197 => 139,  177 => 122,  170 => 118,  163 => 114,  156 => 110,  147 => 104,  43 => 2,);
     }
 
     public function getSourceContext()
@@ -250,7 +260,7 @@ class __TwigTemplate_f2c8ba8b1bbb6def94952ff0e59c80f87513803cdd1a40121e6dc0022f3
 
   </head>
   <body>
-
+    
     <div class=\"bandeau\">
       <div class=\"jvc\">
 
@@ -367,6 +377,11 @@ class __TwigTemplate_f2c8ba8b1bbb6def94952ff0e59c80f87513803cdd1a40121e6dc0022f3
     <div>
      <p>Article3<a href=\"https://www.w3schools.com\">Hearthstone</a></p>
     </div>
+
+    <p><a href=\"/actualites\">Liste des articles</a></p>
+
+    {# Ce lien changera automatiquement en cas de modification des routes #}  
+    <p><a href=\"{{ path('actualites_articles') }}\">Liste des articles</a></p>
 
     </div>\t
 

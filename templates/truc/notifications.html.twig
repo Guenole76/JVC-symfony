@@ -16,7 +16,7 @@
 
   </head>
   <body>
-
+    
     <div class="bandeau">
       <div class="jvc">
 
@@ -133,6 +133,11 @@
     <div>
      <p>Article3<a href="https://www.w3schools.com">Hearthstone</a></p>
     </div>
+
+    <p><a href="/actualites">Liste des articles</a></p>
+
+    {# Ce lien changera automatiquement en cas de modification des routes #}  
+    <p><a href="{{ path('actualites_articles') }}">Liste des articles</a></p>
 
     </div>	
 

@@ -16,6 +16,7 @@ return [
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     'accueil' => [[], ['_controller' => 'App\\Controller\\AccueilController::accueil'], [], [['text', '/']], [], []],
-    'actualites_articles' => [[], ['_controller' => 'App\\Controller\\ArticlesController::index'], [], [['text', '/actualites/']], [], []],
+    'actualites_articles' => [[], ['_controller' => 'App\\Controller\\ArticlesController::article'], [], [['text', '/actualites/article/a']], [], []],
     'app_lucky_number' => [['id'], ['_controller' => 'App\\Controller\\LuckyController::article'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/article']], [], []],
+    'users' => [[], ['_controller' => 'App\\Controller\\UsersController::index'], [], [['text', '/users']], [], []],
 ];
