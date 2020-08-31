@@ -14,7 +14,7 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'accueil', '_controller' => 'App\\Controller\\AccueilController::accueil'], null, null, null, false, false, null]],
-        '/actualites/article/a' => [[['_route' => 'actualites_articles', '_controller' => 'App\\Controller\\ArticlesController::article'], null, null, null, false, false, null]],
+        '/actualites' => [[['_route' => 'actualites_articles', '_controller' => 'App\\Controller\\ArticlesController::index'], null, null, null, true, false, null]],
         '/users' => [[['_route' => 'users', '_controller' => 'App\\Controller\\UsersController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
@@ -34,7 +34,10 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/article/([^/]++)(*:186)'
+                .'|/a(?'
+                    .'|ctualites/articlesa/([^/]++)(*:202)'
+                    .'|rticle/([^/]++)(*:225)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -45,7 +48,8 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        186 => [
+        202 => [[['_route' => 'actualites_articlesa', '_controller' => 'App\\Controller\\ArticlesController::article'], ['slug'], null, null, false, true, null]],
+        225 => [
             [['_route' => 'app_lucky_number', '_controller' => 'App\\Controller\\LuckyController::article'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

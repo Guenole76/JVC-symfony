@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Entity;
-
+use App\Controller\Request;
 use App\Repository\CommentsRepository;
 use Doctrine\ORM\Mapping as ORM;
 

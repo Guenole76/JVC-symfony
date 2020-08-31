@@ -4,8 +4,8 @@
 
 {% block body %}
     <h1>{{ articles.titre }}</h1>
-    <p>{{ articles.createdAt|date }} - Commentaires : {{ commentaires|length }}</p>
-    <img src="{{ vich_uploader_asset(article, 'imageFile')|imagine_filter('article')  }}" alt="">
+   
+    
     <div>{{ articles.contenu|raw }}</div>
 
     <p>Catégories : 
@@ -15,11 +15,11 @@
     </p>
 
     <h2>{% trans %}Comments{% endtrans %}</h2>
-    {% for commentaire in commentaires %}
-        <p>{% trans %}Published by{% endtrans %} {{ commentaire.pseudo }} le {{ commentaire.createdAt|date }}</p>
-        <p>{{ commentaire.contenu }}</p>
+{% for commentaires in articles.commentaires %}
+        <p>{% trans %}Published by{% endtrans %} {{ Commentaires.pseudo }} le {{ Commentaires.createdAt|date }}</p>
+        <p>{{ Commentaires.contenu }}</p>
     {% else %}
         <p>{% trans %}There's no comment yet{% endtrans %}</p>
     {% endfor %}
-    {{ form(form) }}
+    {{ form(commentForm) }}
 {% endblock %}
